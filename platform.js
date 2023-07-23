@@ -124,7 +124,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
     hosts.forEach((host) => {
       assert.isObject(host, `\x1b[31m[CONFIG ERROR] \x1b[0m Each item in the \x1b[33mhosts\x1b[0m array should be an object.`)
 
-      const { address, isRFSupported, isRM4, mac } = host;
+      const { address, isRFSupported, isRM4, mac, delayAfter } = host;
       assert(address, `\x1b[31m[CONFIG ERROR] \x1b[0m Each object in the \x1b[33mhosts\x1b[0m option should contain a value for \x1b[33maddress\x1b[0m (e.g. "192.168.1.23").`)
       assert(mac, `\x1b[31m[CONFIG ERROR] \x1b[0m Each object in the \x1b[33mhosts\x1b[0m option should contain a unique value for \x1b[33mmac\x1b[0m (e.g. "34:ea:34:e7:d7:28").`)
 
@@ -133,7 +133,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
       deviceType = isRFSupported ? (deviceType | 0x2) : deviceType;
       deviceType = isRM4 ? (deviceType | 0x4) : deviceType;
       
-      broadlink.addDevice({ address, port: 80 }, mac.toLowerCase(), deviceType);
+      const device =  broadlink.addDevice({ address, port: 80, delayAfter }, mac.toLowerCase(), deviceType);
     })
   }
 

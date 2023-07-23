@@ -90,7 +90,9 @@ const discoverDevices = (automatic = true, log, logLevel, deviceDiscoveryTimeout
     }
     device.host.macAddress = macAddress;
 
-    log(`\x1b[35m[INFO]\x1b[0m Discovered ${device.model} (${device.type.toString(16)}) at ${device.host.address} (${device.host.macAddress})`);
+
+
+    log(`\x1b[35m[INFO]\x1b[0m Discovered ${device.model} (${device.type.toString(16)}) at ${device.host.address} (${device.host.macAddress}) with delayAfter (${device.host.delayAfter} ${JSON.stringify(device.host)})`);
     addDevice(device);
 
     startPing(device, log);

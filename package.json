@@ -1,8 +1,8 @@
 {
-  "name": "homebridge-broadlink-rm-pro",
-  "displayName": "Homebridge Broadlink RM Pro",
+  "name": "homebridge-broadlink-rm-pro-shades",
+  "displayName": "Homebridge Broadlink RM Pro Shades Delay",
   "version": "4.4.13",
-  "description": "Broadlink RM plugin (including the mini and pro) for homebridge with AC Pro and TV features",
+  "description": "Broadlink RM plugin (including the mini and pro) for homebridge with AC Pro and TV features. This fork provides an useful delay setting that allows the hombridge device to cooldown between broadcasts ",
   "license": "ISC",
   "scripts": {
     "release": "release-it",
